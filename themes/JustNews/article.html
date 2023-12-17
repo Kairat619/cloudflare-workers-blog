@@ -25,7 +25,11 @@
 		<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/wpcom-cn/assets/fonts/icons-2.6.4.js?ver=6.1.2' id='wpcom-icons-js'></script>
 		<link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.3.2/styles/tomorrow-night-bright.min.css">
 		<script src='https://cdn.staticfile.org/highlight.js/10.3.2/highlight.min.js'></script>
-		<script src='//unpkg.com/valine/dist/Valine.min.js'></script＞
+		<style>
+                           #waline-recent img {max-width: 100%;}
+                            #waline-recent li {border: thick double #32a1ce;}
+            </style>
+                 <script src='//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js'></script>
 		{{ &OPT.codeBeforHead }}
 	</head>
 	<body class="archive paged category category-zhishi category-5 paged-2 category-paged-2 lang-cn el-boxed">
@@ -129,16 +133,8 @@
 								</div>
 							</div>
 							<div id="comments" class="entry-comments">
-							<div id="vcomment" class="comments-area"></div>
-    <script＞
-        new Valine({
-            el:'#vcomment',
-            appId: 'utUDqlauIA6JcNu8NBADBgCh-MdYXbMMI',
-            appKey: 'RLNYCFnX3roWrex1P89kaKXM',
-            avatar:'AyCjPTv43QtUAflk0iuNQZIU',
-            placeholder:"Say something..."
-        })
-    </script＞			
+							<div id="waline"  name="waline" class="comments-area"></div>
+  			
 								{{ &OPT.commentCode }}
 							</div>
 						</div>
@@ -193,6 +189,11 @@
 							{{ /widgetLinkList }}
 						</ul>
 					</div>
+							 <div id="linkcat-0" class="widget widget_links">
+                                                     <h3 class="widget-title"><span>Recent comments</span></h3>
+                                                <div id="waline-recent"></div>
+
+                                            </div> 
 					{{ &OPT.widgetOther }}
 				</aside>
 			</div>
@@ -267,6 +268,30 @@ var fifuImageVars = {"fifu_lazy":"1","fifu_woo_lbox_enabled":"1","fifu_woo_zoom"
 			</script>
 <script>hljs.initHighlightingOnLoad(); //代码高亮
 					</script>
+
+		<script>
+                           //这一段是初始化Waline的,visitor: true记得开启
+                 new Waline({
+                el:'#waline',
+                serverURL: 'https://kjcomment.vercel.app/',
+                appId: 'utUDqlauIA6JcNu8NBADBgCh-MdYXbMMI',
+                appKey: 'RLNYCFnX3roWrex1P89kaKXM',
+                avatar:'AyCjPTv43QtUAflk0iuNQZIU',
+                recordIP:false,
+                requiredFields:['nick'],
+                visitor: true,
+                //path:"/",
+                placeholder:"整两句..."
+            })
+                      //这一段是加载最近评论的
+            window.addEventListener('load', function() {
+              Waline.Widget.RecentComments({
+                el: '#waline-recent',
+                serverURL: 'https://kjcomment.vercel.app/',
+                count: 10
+              });
+            });
+        </script>
 		{{ &OPT.codeBeforBody }}
 	</body>
 

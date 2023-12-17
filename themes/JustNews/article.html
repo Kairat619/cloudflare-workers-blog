@@ -25,6 +25,7 @@
 		<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/wpcom-cn/assets/fonts/icons-2.6.4.js?ver=6.1.2' id='wpcom-icons-js'></script>
 		<link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.3.2/styles/tomorrow-night-bright.min.css">
 		<script src='https://cdn.staticfile.org/highlight.js/10.3.2/highlight.min.js'></script>
+		<script src='//unpkg.com/valine/dist/Valine.min.js'></script＞
 		{{ &OPT.codeBeforHead }}
 	</head>
 	<body class="archive paged category category-zhishi category-5 paged-2 category-paged-2 lang-cn el-boxed">
@@ -128,6 +129,16 @@
 								</div>
 							</div>
 							<div id="comments" class="entry-comments">
+							<div id="vcomment" class="comments-area"></div>
+    <script＞
+        new Valine({
+            el:'#vcomment',
+            appId: 'utUDqlauIA6JcNu8NBADBgCh-MdYXbMMI',
+            appKey: 'RLNYCFnX3roWrex1P89kaKXM',
+            avatar:'AyCjPTv43QtUAflk0iuNQZIU',
+            placeholder:"Say something..."
+        })
+    </script＞			
 								{{ &OPT.commentCode }}
 							</div>
 						</div>

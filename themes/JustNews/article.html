@@ -273,6 +273,7 @@ var fifuImageVars = {"fifu_lazy":"1","fifu_woo_lbox_enabled":"1","fifu_woo_zoom"
                            //这一段是初始化Waline的,visitor: true记得开启
                  new Waline({
                 el:'#waline',
+	        lang: 'en',
                 serverURL: 'https://kjcomment.vercel.app/',
                 appId: 'utUDqlauIA6JcNu8NBADBgCh-MdYXbMMI',
                 appKey: 'RLNYCFnX3roWrex1P89kaKXM',
@@ -281,7 +282,7 @@ var fifuImageVars = {"fifu_lazy":"1","fifu_woo_lbox_enabled":"1","fifu_woo_zoom"
                 requiredFields:['nick'],
                 visitor: true,
                 //path:"/",
-                placeholder:"整两句..."
+                placeholder:"Say something..."
             })
                       //这一段是加载最近评论的
             window.addEventListener('load', function() {

@@ -7,7 +7,7 @@ const OPT = {
     "siteDescription":"A Blog Powered By Cloudflare Workers and KV",//博客描述
     "keyWords":"cloudflare,KV,workers,blog",//关键字
     "cacheZoneId":"eb92cc3a90956c4a4e42012aa7c8991e",//清理缓存用 cf区域 ID
-    "cacheToken":"OMqFvDJyuEwKugQ3ivCO78ZEwrERBtvKZVa6bap3",//清理缓存用 cf API token
+    "cacheToken":"Fx9yZpCI_cnuTl4TIP2egVWUj7YnIRoS3O48cSBz",//清理缓存用 cf API token
 	
     "pageSize" : 5,//每页文章数
     "recentlySize" : 6,//最近文章数
